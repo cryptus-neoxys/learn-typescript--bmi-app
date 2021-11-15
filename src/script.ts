@@ -43,7 +43,7 @@ left.addEventListener("click", () => {
   weightDisplay.textContent = weight.toString();
 });
 
-heightElement.addEventListener("change", () => {
+heightElement.addEventListener("input", () => {
   console.log(heightElement.value);
   heightDisplay.textContent = heightElement.value;
 });
