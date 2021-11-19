@@ -107,11 +107,13 @@ svg {
   opacity: 0.5;
   position: relative;
   bottom: 0.5rem;
+  user-select: none;
 }
 .value {
   color: var(--foreground);
   font-size: 2rem;
   font-weight: 600;
+  user-select: none;
 }
 .weight {
   display: flex;
@@ -179,6 +181,7 @@ svg {
   text-align: center;
   font-size: 1.5rem;
   color: var(--foreground);
+  user-select: none;
   box-shadow: 0rem 0.25rem 0.25rem var(--shadow-black),
     inset 0rem 0.125rem 0.125rem var(--shadow-white);
 }
@@ -192,4 +195,25 @@ svg {
 }
 .bmi {
   display: none;
+  color: var(--foreground);
+  align-self: center;
+  font-weight: 700;
+  font-size: 5rem;
+}
+.source {
+  display: none;
+  color: var(--foreground);
+  text-decoration: underline;
+  align-self: center;
+  margin: 2rem;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--foreground);
+  opacity: 0.5;
+}
+
+a.logo {
+  opacity: 1;
 }

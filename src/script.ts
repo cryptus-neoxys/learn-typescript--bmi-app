@@ -7,6 +7,8 @@ const weightElement = document.querySelector("#weight") as HTMLInputElement;
 const weightDisplay = document.querySelector(".w .value");
 const button = document.querySelector(".btn"); // button is of type HTML button, cuz we explicitly select a button tag in query selector
 const bmiElement = document.querySelector(".bmi"); // this returns an (HTML)Element cuz we selected by class
+const form = document.querySelector(".form");
+const source = document.querySelector(".source");
 const toggle = document.querySelector(".theme") as HTMLInputElement;
 const right = document.querySelector(".right");
 const left = document.querySelector(".left");
@@ -47,10 +49,17 @@ heightElement.addEventListener("change", () => {
 });
 
 button.addEventListener("click", () => {
-  const height: number = heightElement.valueAsNumber / 100; // height is type number, cuz we explicitly take number value from input
-  const weight: any = weightElement.value; // weight is type any cuz input can give us any input
+  const height: number = parseInt(heightDisplay.textContent) / 100; // height is type number, cuz we explicitly take number value from input
+  const weight: any = parseInt(weightDisplay.textContent); // weight is type any cuz input can give us any input
 
-  const bmi = weight / (height * height); // not annotating a type, cuz typesimp infers it to be a number anyways
+  const bmi = Math.floor(weight / (height * height)); // not annotating a type, cuz typesimp infers it to be a number anyways
+  console.log(bmi);
+
+  bmiElement.setAttribute("style", "display:flex;");
+  source.setAttribute("style", "display:flex;");
+
+  form.setAttribute("style", "display:none;");
+  button.setAttribute("style", "display:none;");
 
   bmiElement.textContent = bmi.toString(); // toString cuz textContent can only be string
 });

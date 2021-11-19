@@ -10,13 +10,15 @@
   <body>
     <div class="calc">
       <div class="nav">
-        <svg id="logo" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM20 33.3333C27.3638 33.3333 33.3333 27.3638 33.3333 20C33.3333 12.6362 27.3638 6.66667 20 6.66667C12.6362 6.66667 6.66667 12.6362 6.66667 20C6.66667 27.3638 12.6362 33.3333 20 33.3333Z"
-          />
-        </svg>
+        <a class="logo" href="./">
+          <svg id="logo" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM20 33.3333C27.3638 33.3333 33.3333 27.3638 33.3333 20C33.3333 12.6362 27.3638 6.66667 20 6.66667C12.6362 6.66667 6.66667 12.6362 6.66667 20C6.66667 27.3638 12.6362 33.3333 20 33.3333Z"
+            />
+          </svg>
+        </a>
         <div class="toggle">
           <input type="checkbox" class="theme" id="theme-switch" />
           <label for="theme-switch" class="switch">
@@ -55,8 +57,13 @@
           </svg>
         </div>
       </div>
-      <div class="btn">Calculate BMI</div>
       <div class="bmi"></div>
+      <div class="source">
+        <a href="https://github.com/LucidMach/learn-typescript--bmi-app"
+          >view source code</a
+        >
+      </div>
+      <div class="btn">Calculate BMI</div>
     </div>
     <script src="dist/script.js"></script>
   </body>
