@@ -5,14 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TypeScript BMI</title>
+    <link rel="stylesheet" href="dist/style.css" />
   </head>
   <body>
-    Height(cm)
-    <input id="height" type="number" />
-    Weight(kg)
+    <div class="nav">
+      <svg id="logo" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM20 33.3333C27.3638 33.3333 33.3333 27.3638 33.3333 20C33.3333 12.6362 27.3638 6.66667 20 6.66667C12.6362 6.66667 6.66667 12.6362 6.66667 20C6.66667 27.3638 12.6362 33.3333 20 33.3333Z"
+        />
+      </svg>
+      <div class="toggle">
+        <input type="checkbox" class="theme" id="theme-switch" />
+        <label for="theme-switch" class="switch">
+          <span class="circle"></span>
+        </label>
+      </div>
+    </div>
+    <input id="height" type="range" min="100" max="200" value="180" />
     <input id="weight" type="number" />
     <button>Submit</button>
     <div class="bmi"></div>
-    <script src="./script.js"></script>
+    <script src="dist/script.js"></script>
   </body>
 </html>

@@ -2,7 +2,18 @@ const heightElement = document.querySelector("#height") as HTMLInputElement; // 
 const weightElement = document.querySelector("#weight") as HTMLInputElement;
 const button = document.querySelector("button"); // button is of type HTML button, cuz we explicitly select a button tag in query selector
 const bmiElement = document.querySelector(".bmi"); // this returns an (HTML)Element cuz we selected by class
+const root = document.querySelector(":root");
 
+// toggle
+const toggle = document.querySelector(".theme") as HTMLInputElement;
+
+toggle.addEventListener("change", () => {
+  if (toggle.checked === true) {
+    root.setAttribute("style", "--background:#f1f1f1;--foreground:#1f1f1f");
+  } else {
+    root.setAttribute("style", "--background:#1f1f1f;--foreground:#f1f1f1");
+  }
+});
 button.addEventListener("click", () => {
   const height: number = heightElement.valueAsNumber / 100; // height is type number, cuz we explicitly take number value from input
   const weight: any = weightElement.value; // weight is type any cuz input can give us any input
