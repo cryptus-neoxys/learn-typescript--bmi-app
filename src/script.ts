@@ -9,6 +9,8 @@ const button = document.querySelector(".btn"); // button is of type HTML button,
 const bmiElement = document.querySelector(".bmi"); // this returns an (HTML)Element cuz we selected by class
 const form = document.querySelector(".form");
 const source = document.querySelector(".source");
+const results = document.querySelector(".results");
+const bmiClass = document.querySelector(".class");
 const toggle = document.querySelector(".theme") as HTMLInputElement;
 const right = document.querySelector(".right");
 const left = document.querySelector(".left");
@@ -55,7 +57,20 @@ button.addEventListener("click", () => {
   const bmi = Math.floor(weight / (height * height)); // not annotating a type, cuz typesimp infers it to be a number anyways
   console.log(bmi);
 
-  bmiElement.setAttribute("style", "display:flex;");
+  if (bmi < 19) {
+    bmiClass.textContent = "Under Weight";
+    root.setAttribute("style", "--foreground:#f16060");
+  } else if (bmi < 25 && bmi > 19) {
+    bmiClass.textContent = "Normal";
+    root.setAttribute("style", "--foreground:#40f140");
+  } else if (bmi < 30 && bmi > 25) {
+    bmiClass.textContent = "Over Weight";
+    root.setAttribute("style", "--foreground:#f16060");
+  } else {
+    bmiClass.textContent = "Obease";
+    root.setAttribute("style", "--foreground:#f14040");
+  }
+  results.setAttribute("style", "display:flex;");
   source.setAttribute("style", "display:flex;");
 
   form.setAttribute("style", "display:none;");

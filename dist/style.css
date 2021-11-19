@@ -193,10 +193,15 @@ svg {
   box-shadow: 0rem 0.25rem 0.25rem var(--shadow-black),
     inset 0rem 0.125rem 0.125rem var(--shadow-white);
 }
-.bmi {
+.results {
   display: none;
   color: var(--foreground);
   align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.bmi {
   font-weight: 700;
   font-size: 5rem;
 }
