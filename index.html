@@ -8,25 +8,56 @@
     <link rel="stylesheet" href="dist/style.css" />
   </head>
   <body>
-    <div class="nav">
-      <svg id="logo" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM20 33.3333C27.3638 33.3333 33.3333 27.3638 33.3333 20C33.3333 12.6362 27.3638 6.66667 20 6.66667C12.6362 6.66667 6.66667 12.6362 6.66667 20C6.66667 27.3638 12.6362 33.3333 20 33.3333Z"
-        />
-      </svg>
-      <div class="toggle">
-        <input type="checkbox" class="theme" id="theme-switch" />
-        <label for="theme-switch" class="switch">
-          <span class="circle"></span>
-        </label>
+    <div class="calc">
+      <div class="nav">
+        <svg id="logo" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM20 33.3333C27.3638 33.3333 33.3333 27.3638 33.3333 20C33.3333 12.6362 27.3638 6.66667 20 6.66667C12.6362 6.66667 6.66667 12.6362 6.66667 20C6.66667 27.3638 12.6362 33.3333 20 33.3333Z"
+          />
+        </svg>
+        <div class="toggle">
+          <input type="checkbox" class="theme" id="theme-switch" />
+          <label for="theme-switch" class="switch">
+            <span class="circle"></span>
+          </label>
+        </div>
       </div>
+      <div class="form">
+        <div class="height">
+          <div class="value">180</div>
+          <div class="unit">cm</div>
+          <input id="height" type="range" min="100" max="200" value="180" />
+        </div>
+        <div class="weight">
+          <svg
+            class="dir left"
+            viewBox="0 0 26 30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M-5.24537e-07 11L18 0.607696L18 21.3923L-5.24537e-07 11Z"
+            />
+          </svg>
+          <div class="w">
+            <div class="value">50</div>
+            <div class="unit">kg</div>
+          </div>
+          <svg
+            class="dir right"
+            viewBox="0 0 26 30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 11L-9.78799e-07 21.3923L-7.02746e-08 0.607695L18 11Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="btn">Calculate BMI</div>
+      <div class="bmi"></div>
     </div>
-    <input id="height" type="range" min="100" max="200" value="180" />
-    <input id="weight" type="number" />
-    <button>Submit</button>
-    <div class="bmi"></div>
     <script src="dist/script.js"></script>
   </body>
 </html>

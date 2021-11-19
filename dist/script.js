@@ -1,17 +1,38 @@
-var heightElement = document.querySelector("#height"); // from query selector we can get any HTML element, but to extract value we need it to be an input element
-var weightElement = document.querySelector("#weight");
-var button = document.querySelector("button"); // button is of type HTML button, cuz we explicitly select a button tag in query selector
-var bmiElement = document.querySelector(".bmi"); // this returns an (HTML)Element cuz we selected by class
 var root = document.querySelector(":root");
-// toggle
+var body = document.querySelector("body");
+var heightElement = document.querySelector("#height"); // from query selector we can get any HTML element, but to extract value we need it to be an input element
+var heightDisplay = document.querySelector(".height .value");
+var weightElement = document.querySelector("#weight");
+var weightDisplay = document.querySelector(".w .value");
+var button = document.querySelector(".btn"); // button is of type HTML button, cuz we explicitly select a button tag in query selector
+var bmiElement = document.querySelector(".bmi"); // this returns an (HTML)Element cuz we selected by class
 var toggle = document.querySelector(".theme");
+var right = document.querySelector(".right");
+var left = document.querySelector(".left");
+body.addEventListener("load", function () {
+    body.setAttribute("style", "height:" + window.innerHeight); // for mobile x PWA synergy
+});
 toggle.addEventListener("change", function () {
     if (toggle.checked === true) {
-        root.setAttribute("style", "--background:#f1f1f1;--foreground:#1f1f1f");
+        root.setAttribute("style", "--background:#f1f1f1;--foreground:#1f1f1f;--shadow-white:rgba(255, 255, 255, 0.75);");
     }
     else {
-        root.setAttribute("style", "--background:#1f1f1f;--foreground:#f1f1f1");
+        root.setAttribute("style", "--background:#1f1f1f;--foreground:#f1f1f1;--shadow-white:rgba(255, 255, 255, 0.1);");
     }
+});
+right.addEventListener("click", function () {
+    var weight = parseInt(weightDisplay.textContent);
+    weight++;
+    weightDisplay.textContent = weight.toString();
+});
+left.addEventListener("click", function () {
+    var weight = parseInt(weightDisplay.textContent);
+    weight--;
+    weightDisplay.textContent = weight.toString();
+});
+heightElement.addEventListener("change", function () {
+    console.log(heightElement.value);
+    heightDisplay.textContent = heightElement.value;
 });
 button.addEventListener("click", function () {
     var height = heightElement.valueAsNumber / 100; // height is type number, cuz we explicitly take number value from input
