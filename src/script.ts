@@ -15,9 +15,7 @@ const toggle = document.querySelector(".theme") as HTMLInputElement;
 const right = document.querySelector(".right");
 const left = document.querySelector(".left");
 
-body.addEventListener("load", () => {
-  body.setAttribute("style", `height:${window.innerHeight}`); // for mobile x PWA synergy
-});
+body.setAttribute("style", `height:${window.innerHeight}px`); // for mobile x PWA synergy
 
 toggle.addEventListener("change", () => {
   if (toggle.checked === true) {

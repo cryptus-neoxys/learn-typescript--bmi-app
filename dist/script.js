@@ -13,9 +13,7 @@ var bmiClass = document.querySelector(".class");
 var toggle = document.querySelector(".theme");
 var right = document.querySelector(".right");
 var left = document.querySelector(".left");
-body.addEventListener("load", function () {
-    body.setAttribute("style", "height:" + window.innerHeight); // for mobile x PWA synergy
-});
+body.setAttribute("style", "height:" + window.innerHeight + "px"); // for mobile x PWA synergy
 toggle.addEventListener("change", function () {
     if (toggle.checked === true) {
         root.setAttribute("style", "--background:#f1f1f1;--foreground:#1f1f1f;--shadow-white:rgba(255, 255, 255, 0.75);");
